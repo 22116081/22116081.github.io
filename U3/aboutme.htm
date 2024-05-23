@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital portfolio</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+Body{
+
+Background-image:url("Images/red.gif");
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  border-radius:10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  Background-image:url("Images/red.gif");
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffc107;
+}
+  
+  
+  .hero-section {
+ display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background-color: rgba(245, 245, 245, 0.9);
+      border-radius: 10px;
+      margin: 40px;
+  
+  
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius:10px;
+}
+
+.hero-text {
+  max-width: 1100px;
+  padding:40px;
+
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Scroll Top Button Styles */
+ .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: none;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+   
+      transform: translateY(20px);
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top i {
+      font-size: 20px;
+    }
+  
+  
+  
+  </style>
+  
+  <script>
+	window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.querySelector(".scroll-top").style.display = "block";
+  } else {
+    document.querySelector(".scroll-top").style.display = "none";
+  }
+}
+
+document.querySelector(".scroll-top").addEventListener("click", function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+
+});
+
+	</script>
+  
+  
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+  
+  
+</head>
+<body>
+
+
+  <nav>
+    <div class="logo">
+      <a href="#">Illia Slanina</a>
+    </div>
+    <ul class="nav-links">
+	 <li><a href="index.htm">Home</a></li>
+      <li><a href="aboutme.htm">about me</a></li>
+      <li><a href="U12.htm">U1&U2</a></li>
+      <li><a href="U14.htm">U14</a></li>
+      <li><a href="U13A.htm">U13</a></li>
+      <li><a href="U8A.htm">U8</a></li>
+    </ul>
+  </nav>
+  
+ <div class="hero-section">
+    <div class="hero-image">
+      <img src="Images/me.jpg" alt="Hero Image">
+    </div>
+    <div class="hero-text">
+      <h1>About me</h1>
+      <p>My name is Illia Slanina, and I am originally from Ukraine. I moved to
+the UK on August 19, 2022, with a strong ambition to pursue a career
+in the field of IT. I have been actively learning various programming
+languages, including HTML, CSS, JavaScript, React, Python, and
+jQuery. These languages have allowed me to develop a solid
+ foundation in web development and software engineering.
+ My name is Illia Slanina, and I am originally from Ukraine. I moved to
+the UK on August 19, 2022, with a strong ambition to pursue a career
+in the field of IT. I have been actively learning various programming
+languages, including HTML, CSS, JavaScript, React, Python, and
+jQuery. These languages have allowed me to develop a solid
+ foundation in web development and software engineering.Currently, I am enrolled in two colleges to further enhance my
+knowledge and skills. At Coleg Cambria in Deeside, I am studying
+IT at level 2, gaining practical experience and a deeper
+understanding of the subject. Additionally, I am pursuing an
+online course at KNTIIS college in Ukraine, specifically in Odesa,
+where I am in my fourth year of studying Computer Technology
+Automation.
+To complement my academic pursuits, I have also been working
+part-time at McDonald's, which has provided me with valuable
+customer service experience and the ability to work efficiently in a
+fast-paced environment.
+Furthermore, I am committed to continuous self-improvement
+and have completed numerous courses on platforms like
+Coursera. By actively participating in these courses, I have
+obtained certificates that validate my knowledge and
+commitment to expanding my skill set.
+With a strong passion for IT, a diverse educational background,
+practical work experience, and a dedication to ongoing learning, I
+
+am confident in my ability to contribute positively to any IT-
+related position I undertake. I am eager to leverage my skills and
+
+expertise to make a meaningful impact in the field and contribute
+to the success of innovative projects and teams. could you simplify this text as it should be like first superficial
+
+	 </p>
+    </div>
+  </div>
+
+  <a href="#" class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+
+
+  
+  
+  
+  
+</body>
+</html>

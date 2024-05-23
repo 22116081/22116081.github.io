@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital portfolio</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+Body{
+
+Background-image:url("Images/red.gif");
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  border-radius:10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  Background-image:url("Images/red.gif");
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffc107;
+}
+  
+  
+  .hero-section {
+  display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background-color: rgba(245, 245, 245, 0.9);
+      border-radius: 10px;
+      margin: 40px;
+	  
+
+  
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius:10px;
+  
+}
+
+.hero-text {
+  max-width: 1100px;
+  padding:40px;
+
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Scroll Top Button Styles */
+ .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: none;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+   
+      transform: translateY(20px);
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top i {
+      font-size: 20px;
+    }
+   .hero-pdf {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  
+  
+  </style>
+  
+  <script>
+	window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.querySelector(".scroll-top").style.display = "block";
+  } else {
+    document.querySelector(".scroll-top").style.display = "none";
+  }
+}
+
+document.querySelector(".scroll-top").addEventListener("click", function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+
+});
+
+	</script>
+  
+  
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+  
+  
+</head>
+<body>
+
+
+  <nav>
+    <div class="logo">
+      <a href="#">Illia Slanina</a>
+    </div>
+    <ul class="nav-links">
+	 <li><a href="index.htm">Home</a></li>
+      <li><a href="aboutme.htm">about me</a></li>
+      <li><a href="U12.htm">U1&U2</a></li>
+      <li><a href="U14.htm">U14</a></li>
+      <li><a href="U13A.htm">U13</a></li>
+      <li><a href="U8A.htm">U8</a></li>
+    </ul>
+  </nav>
+  
+ <div class="hero-section">
+   <div class="hero-pdf">
+      <object type="application/pdf" data="documents/u14.pdf" width="800" height="440"></object>
+    </div>
+    <div class="hero-text">
+      <h1>Unit 14</h1>
+      <p>
+	  In Unit 14, I gained valuable knowledge and practical skills related to installing and maintaining computer hardware components. This unit covered the essential steps and best practices for properly setting up and configuring various hardware components, including motherboards, processors, memory modules, storage devices, and peripheral devices.
+Throughout the unit, I learned how to carefully handle and install these components while adhering to manufacturer guidelines and safety protocols. Additionally, I acquired troubleshooting techniques to identify and resolve common hardware issues that may arise during the installation or maintenance process.
+By successfully completing Unit 14, I demonstrated my proficiency in hardware installation and maintenance, ensuring that computer systems are properly assembled, configured, and maintained for optimal performance and reliability. Here is an example of an assignment for U14 with which I got Distinction.
+
+	 </p>
+    </div>
+  </div>
+
+  <a href="#" class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+
+
+  
+  
+  
+  
+</body>
+</html>
