@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Licensing</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+ 
+  color: white;
+}
+
+.navbar {
+            background-color: #fef9f6;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .navbar-top {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.875rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .navbar-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e5e5e5;
+            padding-top: 0.5rem;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar-icons {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .navbar-icons button {
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 0.5rem;
+            background: none;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-icons button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            filter: brightness(150%);
+        }
+        .swiper {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            position: relative;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%; /* Full height of the swiper container */
+        }
+
+        .swiper-slide .swiper-slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Swiper Pagination */
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #1D4ED8; /* Blue color */
+        }
+
+        /* Custom arrow buttons */
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff; /* White color */
+        }
+
+        /* Section Below Carousel */
+        .stats-section {
+            height: 100vh; /* Same height as the carousel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .stats-container {
+            justify-content: space-around;
+            width: 100%; /* Adjust width as needed */
+            justify-content: center;
+        }
+
+        .stats-item {
+            font-size: 5rem; /* Larger font size */
+            font-weight: bold;
+            color: #000000; /* Blue color */
+            margin: 0 2rem; /* Margin for spacing between items */
+            text-align: center;
+            display: flex;
+        }
+
+        .stats-label {
+            font-size: 1.5rem; /* Larger label size */
+            color: #333;
+            display: flex;
+            margin-top: 100px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .search-bar {
+            width: 70%;
+            max-width: 600px;
+            padding: 10px;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+            box-sizing: border-box;
+            color: black;
+            margin-bottom: 100px;
+        }
+
+        .search-button {
+            border: none;
+            color: #102fb9;
+            padding: 13px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-left: -50px;
+            margin-bottom: 100px;
+        }
+
+        /* Headline Text */
+        .headline {
+            font-size: 5rem;
+            font-weight: bold;
+            margin-bottom: 0px;
+            z-index: 2;
+        }
+
+        .subheadline {
+            font-size: 2.5rem;
+            z-index: 2;
+        }
+
+        /* Slide-in Animation */
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 1; /* Remove fading effect */
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            transform: translateY(50px);
+            opacity: 1;
+            transition: transform 1s ease-out;
+        }
+
+        .slide-up.visible {
+            animation: slideUp 1s forwards;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 transition duration-500 ease-in-out" id="body">
+
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-40">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold text-blue-600 dark:text-white" id="site-title" style="margin-top: 20px;"><h1>REPUBLIC OF ZAMBIA</h1>BUSINESS LICENSING PORTAL</span>
+                </div>
+                <div class="hidden md:flex md:space-x-8" style="margin-top: 50px;">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-home">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-about">About Us</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-contact">Contact Us</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-faq">FAQ</a>
+                </div>
+               
+                <div class="hidden md:flex items-center flex-col">
+                   
+                    <!-- Language Dropdown -->
+                    <div class="relative inline-block text-left">
+                        <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700" id="language-button" aria-expanded="true" aria-haspopup="true">
+                            <span id="language-label">EN</span>
+                            <svg id="arrow-icon" class="-mr-1 ml-2 h-5 w-5 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06 0L10 10.293l3.71-3.08a.75.75 0 011.05 1.14l-4.25 3.5a.75.75 0 01-1 0l-4.25-3.5a.75.75 0 010-1.14z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div id="language-dropdown" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 hidden" role="menu" aria-orientation="vertical" aria-labelledby="language-button" tabindex="-1">
+                            <div class="py-1" role="none">
+                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700" role="menuitem" data-lang="en">EN</a>
+                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700" role="menuitem" data-lang="sp">SP</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Form -->
+                    <form class="flex mt-4">
+                        <input type="text" placeholder="Search..." class="px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition duration-200">Search</button>
+                    </form>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex items-center">
+                    <button class="ml-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200" style="margin-top:50px">Reviews</button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white dark:bg-gray-800">
+            <div class="px-4 py-2">
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-home">Home</a>
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-about">About Us</a>
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-contact">Contact Us</a>
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-faq">FAQ</a>
+            </div>
+            <div class="px-4 py-2">
+                <form class="flex">
+                    <input type="text" placeholder="Search..." class="px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition duration-200">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section class="bg-white py-20 lg:py-40 slide-up relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-6">
+            <!-- Background content on the left -->
+            <div class="text-left">
+                <h2 class="text-5xl lg:text-7xl font-bold mb-10">Background</h2>
+                <p class="text-xl lg:text-3xl text-gray-700 mb-6">
+                    The Business Regulatory Review Agency (BRRA) was established in 2014 as part of the Private Sector Development Reform Programme (PSDRP) with the goal of reducing the cost of doing business and creating an environment conducive for business development and growth.
+                </p>
+                <p class="text-xl lg:text-3xl text-gray-700">
+                    The BRRA is a specialized Government agency established under the Business Regulatory Act No. 3 of 2014. It became operational in January 2016.
+                </p>
+            </div>
+    
+            <!-- Table on the right -->
+            <div class="bg-gray-200 rounded-3xl shadow p-6">
+                <div class="bg-blue-600 text-white font-bold p-4 rounded-t-lg flex justify-between items-center">
+                    <span>Most Viewed</span>
+                    <i class="fa fa-eye"></i>
+                </div>
+                <ul class="bg-white text-gray-700 p-4 space-y-2 ">
+                    <li><a href="#" class="hover:text-blue-600">GREEN NATIONAL REGISTRATION CARD (NRC)</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Passport</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Business Levy Certificate</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Mineral Trading Permit</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Liquor Licensing Forms and Fees - Chilanga</a></li>
+                </ul>
+                <div class="bg-white text-center py-2 rounded-b-lg">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="bg-blue-600 py-40 slide-up rounded-t-3xl ">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-6">
+            <!-- Mandate content on the left -->
+            <div class="text-left">
+                <h2 class="text-5xl lg:text-9xl font-bold mb-10 text-white">Mandate</h2>
+                <p class="text-xl lg:text-3xl text-white mb-6">
+                    The Business Regulatory Review Agency is mandated to administer the Business Regulatory Act. The Act has introduced a set of principles, procedures and minimum requirements for the introduction of regulatory measures.
+                </p>
+            </div>
+    
+            <!-- Recent Updates table on the right -->
+            <div class="bg-gray-200 rounded-3xl shadow p-6">
+                <div class="bg-blue-600 text-white font-bold p-4 rounded-t-lg flex justify-between items-center">
+                    <span>Recent Updates</span>
+                    <i class="fa fa-refresh"></i>
+                </div>
+                <ul class="bg-white text-gray-700 p-4 space-y-2">
+                    <li><a href="#" class="hover:text-blue-600">MICRO OR SMALL BUSINESS ENTERPRISES - VUBWI</a></li>
+                    <li><a href="#" class="hover:text-blue-600">MICRO OR SMALL BUSINESS ENTERPRISES - CHAMA</a></li>
+                    <li><a href="#" class="hover:text-blue-600">MICRO OR SMALL BUSINESS ENTERPRISES - SINDA</a></li>
+                    <li><a href="#" class="hover:text-blue-600">LIQUOR LICENSING FORMS AND FEES - ALL PROVINCES IN ZAMBIA</a></li>
+                    <li><a href="#" class="hover:text-blue-600">MICRO OR SMALL BUSINESS ENTERPRISES - SIAVONGA</a></li>
+                </ul>
+                <div class="bg-white text-center py-2 rounded-b-lg">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-blue-600 py-40 slide-up rounded-b-3xl">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-9xl font-bold mb-10 text-white ">Mission</h2>
+            <p class="text-3xl text-white mb-6">
+                “To improve the regulatory environment, quality of regulations and lessen the regulatory burden for sustainable business development and growth.”
+                </p>
+            </div>
+    </section>
+
+    <section class="bg-white py-40 slide-up rounded-t-3xl">
+        <div class="max-w-4xl mx-auto text-left">
+            <h2 class="text-9xl font-bold mb-10">Vision</h2>
+            <p class="text-3xl text-black mb-6">
+                “To be an indispensable ally of the Zambian businesses that fosters a world class business environment.”
+                </p>
+            </div>
+    </section>
+
+
+    <section class="bg-white py-40 slide-up">
+        <div class="max-w-4xl mx-auto text-left">
+            <h2 class="text-9xl font-bold mb-10 text-black">Objectives</h2>
+            <p class="text-5xl text-white">
+                Arising from its functions, the objectives for which the BRRA was established are: <br>
+
+               
+                </p>
+                <ul class="text-3xl text-black"><br>
+                    <li>To improve the quality of regulation by ensuring that businesses are regulated in a fair, equitable and transparent manner and for specific and legitimate reasons (better regulation)</li><br>
+                    <li>To ensure consistent regulation, curb red tape and abuse of regulatory powers and that businesses have a say in their regulation;</li><br>
+                    <li>To ensure that regulatory bodies discharge their functions effectively and efficiently and in a coordinated manner;</li><br>
+                    <li>To ease and reduce the cost of compliance with regulation and ultimately, foster a pro-business, transparent, simpler and cost effective regulatory regime;</li><br>
+                    <li>Give a voice to businesses in how they are regulated.</li>
+                </ul>
+            </div>
+    </section>
+
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- Footer Section -->
+     <footer class="bg-gray-800 py-16 text-white slide-up">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Newsletter Signup -->
+            <div class="col-span-2">
+                <h2 class="text-xl font-bold mb-4">Sign up for our Newsletter</h2>
+                <form action="#" method="POST" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <input type="text" placeholder="First name*" class="w-full p-3 rounded bg-gray-700 border-none text-white">
+                        <input type="text" placeholder="Last name*" class="w-full p-3 rounded bg-gray-700 border-none text-white">
+                        <input type="email" placeholder="Email*" class="w-full p-3 rounded bg-gray-700 border-none text-white">
+                    </div>
+                    <div class="text-left text-sm text-gray-300">
+                        <label class="flex items-start space-x-2">
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                            <span>By adding your name and email, you agree to receive our email communications and confirm that you are at least 18 years of age.*</span>
+                        </label>
+                    </div>
+                    <button class="mt-4 px-6 py-3 bg-transparent border border-white text-white font-bold rounded-2xl hover:bg-white hover:text-gray-800 transition">Submit</button>
+                </form>
+            </div>
+            
+            <!-- Footer Links -->
+            <div>
+                <h3 class="text-lg font-bold mb-4">Get involved</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline"></a></li>
+                    <li><a href="#" class="hover:underline">Partner with us</a></li>
+                    <li><a href="#" class="hover:underline">Grow your business</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">FAQ</a></li>
+                    <li><a href="#" class="hover:underline">Contact us</a></li>
+                    <li><a href="#" class="hover:underline">Unsubscribe from news letter</a></li>
+                    <li><a href="#" class="hover:underline">Useful links</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Governance</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Financials</a></li>
+                    <li><a href="#" class="hover:underline">Anti-corruption policy</a></li>
+                    <li><a href="#" class="hover:underline">Grievances</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="max-w-7xl mx-auto mt-12 flex flex-col lg:flex-row justify-between items-center text-sm text-gray-400">
+            <p><br>Copyright 2024 &copy; Business Regulatory Review Agency</br>
+        All rights reserved. Privacy Policy</p>
+            <p>BRRA General Line: <br>+260 211 259165.</p>
+            <p>Call Center:<br> +260 211 259165</p>
+            <p>Plot No. 2251 Fairley Road, ridgeway ,Lusaka. P.O.Box 50593, Lusaka-Zambia</p>
+            <div class="flex space-x-4 mt-4 lg:mt-0">
+                
+                <a href="https://www.facebook.com/businessregulatoryreview2019" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fa fa-facebook"></i></a>
+                <a href="http://www.brra.org.zm" aria-label="YouTube" class="text-white hover:text-gray-300"><i class="fa fa-google"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            spaceBetween: 0, // No space between slides
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000, // 5 seconds delay between slides
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                // Responsive settings can be adjusted as needed
+                640: {
+                    slidesPerView: 1, // Full screen on tablets and above
+                },
+                768: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 1,
+                },
+            }
+        });
+
+        // Pause autoplay when search bar is focused
+        const searchBars = document.querySelectorAll('.search-bar');
+        searchBars.forEach(searchBar => {
+            searchBar.addEventListener('focus', () => {
+                swiper.autoplay.stop();
+            });
+            searchBar.addEventListener('blur', () => {
+                swiper.autoplay.start();
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Dropdown Toggle
+        const languageButton = document.getElementById('language-button');
+        const languageDropdown = document.getElementById('language-dropdown');
+        const arrowIcon = document.getElementById('arrow-icon');
+        const languageLabel = document.getElementById('language-label');
+
+        languageButton.addEventListener('click', () => {
+            languageDropdown.classList.toggle('hidden');
+            arrowIcon.classList.toggle('rotate-180');
+        });
+
+        // Change Language
+        languageDropdown.addEventListener('click', (event) => {
+            const lang = event.target.getAttribute('data-lang');
+            if (lang) {
+                if (lang === 'sp') {
+                    languageLabel.textContent = 'SP';
+                    document.getElementById('about-title').textContent = 'Sobre nosotros';
+                    document.getElementById('about-description').textContent = 'Proporcionamos servicios integrales para obtener licencias comerciales adaptadas a sus necesidades.';
+                    document.getElementById('hero-title').textContent = 'Bienvenido a Licencia Comercial';
+                    document.getElementById('hero-description').textContent = 'Tu solución integral para todas las necesidades de licencias comerciales.';
+                    document.getElementById('site-title').textContent = 'Licencia Comercial';
+                    document.getElementById('get-started-button').textContent = 'Empezar';
+                    // Update navbar links for Spanish
+                    document.getElementById('nav-home').textContent = 'Inicio';
+                    document.getElementById('nav-about').textContent = 'Sobre Nosotros';
+                    document.getElementById('nav-contact').textContent = 'Contáctanos';
+                    document.getElementById('nav-faq').textContent = 'FAQ';
+                } else {
+                    languageLabel.textContent = 'EN';
+                    document.getElementById('about-title').textContent = 'About Us';
+                    document.getElementById('about-description').textContent = 'We provide comprehensive services for obtaining business licenses tailored to your needs.';
+                    document.getElementById('hero-title').textContent = 'Welcome to Business Licensing';
+                    document.getElementById('hero-description').textContent = 'Your one-stop solution for all business licensing needs.';
+                    document.getElementById('site-title').textContent = 'Business Licensing';
+                    document.getElementById('get-started-button').textContent = 'Get Started';
+                    // Update navbar links for English
+                    document.getElementById('nav-home').textContent = 'Home';
+                    document.getElementById('nav-about').textContent = 'About Us';
+                    document.getElementById('nav-contact').textContent = 'Contact Us';
+                    document.getElementById('nav-faq').textContent = 'FAQ';
+                }
+                languageDropdown.classList.add('hidden');
+                arrowIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Close dropdown on clicking outside
+        window.addEventListener('click', (event) => {
+            if (!languageButton.contains(event.target) && !languageDropdown.contains(event.target)) {
+                languageDropdown.classList.add('hidden');
+                arrowIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Animated Counter
+        const counters = document.querySelectorAll('.countup');
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                if (count < target) {
+                    counter.innerText = count + Math.ceil(target / 100);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
+
+        // Slide-up Animation on Scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.slide-up'); // Select all sections with the slide-up class
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            };
+
+            const slideUpOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once the animation is triggered
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                slideUpOnScroll.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
